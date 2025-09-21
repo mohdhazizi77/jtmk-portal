@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('index');
-})->name('/');
+Route::resource('/', DashboardController::class)->names('dashboard');
 
 Route::view('index', 'index')->name('index');
+
